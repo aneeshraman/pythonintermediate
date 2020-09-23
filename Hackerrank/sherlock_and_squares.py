@@ -2,17 +2,13 @@ import math
 
 
 def squares(a, b):
-    string_list = []
-    range_list = []
     final_num = 0
-    for range_element in range(a, b + 1):
-        string_list.append(str(math.sqrt(range_element)))
-        range_list.append(range_element)
+    square_list = []
+    for i in range(1, (10 ** 5) + 1):
+        square_list.append(i ** 2)
 
-    index_num = -1
-    for string_list_element in string_list:
-        index_num += 1
-        if len(string_list_element) == 3:
+    for i in square_list:
+        if a <= i <= b:
             final_num += 1
 
     print(final_num)
