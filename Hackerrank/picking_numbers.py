@@ -5,12 +5,22 @@ class PickingNumbers:
         self.number_of_elements = n
     
     def difference_array(self):
-        self.differenceArray = []
+        self.difference_array = []
         self.array.sort(reverse=True)
 
 
-n = int(input().strip())
+n = int(
+    input().strip()
+)
 
-a = list(map(int, input().rstrip().split()))
+a = list(
+    map(
+        int,
+        input().rstrip().split()
+    )
+)
 
-result = PickingNumbers(a, n)
+result = PickingNumbers(
+    a,
+    n
+)

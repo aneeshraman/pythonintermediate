@@ -1,5 +1,7 @@
 class Attendee:
-    """Common base class for all attendees"""
+    """
+    Common base class for all attendees
+    """
 
     def __init__(self, name, tickets):
         self.name = name
