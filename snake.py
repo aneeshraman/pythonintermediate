@@ -51,7 +51,23 @@ class Snake:
 
     def moveRight(self):
         # First creating the coordinates for the topLeft position of the head.
-        self.topLeftSnakeHead = (self.topLeftSnakeHead[0] + self.moveX)
+        self.topLeftSnakeHead = (self.topLeftSnakeHead[0] + self.moveX, self.topLeftSnakeHead[1])
+        # Now creating the coordinates for the topLeft position of the tail.
+        self.topLeftSnakeTail = (self.topLeftSnakeTail[0] + self.moveX, self.topLeftSnakeTail[1])
+
+    def moveLeft(self):
+        # First creating the coordinates for the topLeft position of the head.
+        self.topLeftSnakeHead = (self.topLeftSnakeHead[0] + self.moveX, self.topLeftSnakeHead[1])
+
+        # Now creating the coordinates for the topLeft position of the tail.
+        self.topLeftSnakeTail = (self.topLeftSnakeTail[0] + self.moveX, self.topLeftSnakeTail[1])
+
+    def moveUp(self):
+        # First creating the coordinates for the topLeft position of the head.
+        self.topLeftSnakeHead = (self.topLeftSnakeHead[0], self.topLeftSnakeHead[1] + self.moveY)
+
+        # Now creating the coordinates for the topLeft position of the tail.
+        self.topLeftSnakeTail = (self.topLeftSnakeHead[0], self.topLeftSnakeTail[1])
 
 
 # Next create a class for the fruit. The fruit can have a random location on the screen.
