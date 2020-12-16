@@ -38,33 +38,44 @@ class Snake:
         # First creating the coordinates for the topLeft position of the tail.
         self.topLeftSnakeTail = (width * 1 / 2 + 10, height * 4 / 7)
         # Creating the snake tail.
-        self.snakeTale = pygame.draw.rect(display,
+        self.snakeTail = pygame.draw.rect(display,
                                           blue,
                                           pygame.Rect(self.topLeftSnakeTail[0], self.topLeftSnakeTail[1],
                                                       10, 10))
 
-    def moveDown(self):
+    # MoveX and MoveY can be negative. First right for when moving towards right.
+    # Second move for turning.
+    def rightUp(self):
         # First creating the coordinates for the topLeft position of the head.
         self.topLeftSnakeHead = (self.topLeftSnakeHead[0], self.topLeftSnakeHead[1] + self.moveY)
+
+        # Now creating the coordinates for the topLeft position of the tail.
+        self.topLeftSnakeTail = (self.topLeftSnakeHead[0], self.topLeftSnakeTail[1])
+
+    def rightDown(self):
+        # First creating the coordinates for the topLeft position of the head.
+        self.topLeftSnakeHead = (self.topLeftSnakeHead[0], self.topLeftSnakeHead[1] + self.moveY)
+
         # Now creating the coordinates for the topLeft position of the head.
         self.topLeftSnakeTail = (self.topLeftSnakeHead[0], self.topLeftSnakeTail[1])
 
-    def moveRight(self):
-        # First creating the coordinates for the topLeft position of the head.
-        self.topLeftSnakeHead = (self.topLeftSnakeHead[0] + self.moveX, self.topLeftSnakeHead[1])
-        # Now creating the coordinates for the topLeft position of the tail.
-        self.topLeftSnakeTail = (self.topLeftSnakeTail[0] + self.moveX, self.topLeftSnakeTail[1])
-
-    def moveLeft(self):
+    def rightRight(self):
         # First creating the coordinates for the topLeft position of the head.
         self.topLeftSnakeHead = (self.topLeftSnakeHead[0] + self.moveX, self.topLeftSnakeHead[1])
 
         # Now creating the coordinates for the topLeft position of the tail.
-        self.topLeftSnakeTail = (self.topLeftSnakeTail[0] + self.moveX, self.topLeftSnakeTail[1])
+        self.topLeftSnakeTail = (self.topLeftSnakeTail[0] + self.moveX, self.topLeftSnakeHead[0])
 
-    def moveUp(self):
+    def leftUp(self):
         # First creating the coordinates for the topLeft position of the head.
-        self.topLeftSnakeHead = (self.topLeftSnakeHead[0], self.topLeftSnakeHead[1] + self.moveY)
+        self.topLeftSnakeHead = (self.topLeftSnakeHead[0] + self.moveY, self.topLeftSnakeHead[1])
+
+        # Now creating the coordinates for the topLeft position of the tail.
+        self.topLeftSnakeTail = (self.topLeftSnakeHead[0], self.topLeftSnakeTail[1])
+
+    def leftDown(self):
+        # First creating the coordinates for the topLeft position of the head.
+        self.topLeftSnakeHead = (self.topLeftSnakeHead[0] + self.moveY, self.topLeftSnakeHead[1])
 
         # Now creating the coordinates for the topLeft position of the tail.
         self.topLeftSnakeTail = (self.topLeftSnakeHead[0], self.topLeftSnakeTail[1])
