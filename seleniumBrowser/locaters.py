@@ -1,37 +1,75 @@
-# Importing the selenium webdriver and other import libraries.
+# Importing the webdriver required for automation.
 from selenium import webdriver
-# This is so that we can search for text boxes.
+# Importing the By required for automation.
 from selenium.webdriver.common.by import By
 
-
-# Creating a browser window.
+# Creating the chrome window.
 driver = webdriver.Chrome()
 
-# Loading the practice url.
+# Now getting the url.
 driver.get("https://rahulshettyacademy.com/angularpractice/")
 
-# Maximizing the window.
+# Now maximizing the window.
 driver.maximize_window()
 
-# Finding out the textbox by name and as our objective is to type a name so I would
-# use the send_keys function to type the name.
-name = driver.find_element(By.NAME, "name")
-name.send_keys("Aneesh")
+# Very Important note.
+# To create the css locator the syntax is "tagname[attribute='value']"
 
+# Creating the css locator for name.
+name = "input[name='name']"
 
-# In the same way finding out the email.
-email = driver.find_element(By.NAME, "email")
-email.send_keys("aneeshraman17mar@gmail.com")
+# Now creating the element for the name text box.
+name_text_box = driver.find_element(By.CSS_SELECTOR, name)
 
-# In the same way finding out the password.
-password = driver.find_element(By.ID, "exampleInputPassword1")
-password.send_keys("aneeshti123")
+# Now typing my name into the name_text_box that is "Aneesh"
+name_text_box.send_keys("Aneesh")
 
-# In the same way finding out the iceCream button.
-iceCream = driver.find_element(By.ID, "exampleCheck1")
-iceCream.click()
+# Creating the name locator for email.
+email = "email"
 
-# Very Important.
-# CSS Selector format with usage. tagname[attribute='value']
-# Xpath Selector format with usage. //tagname[@attribute='value']
+# Now creating the element for the email text box.
+email_text_box = driver.find_element(By.NAME, email)
 
+# Now typing my email id into the email_text_box that is "aneeshraman17mar@gmail.com"
+email_text_box.send_keys("aneeshraman17mar@gmail.com")
+
+# Creating a css locator for the password.
+password = "input[id='exampleInputPassword1']"
+
+# Now creating the element for the password text box.
+password_text_box = driver.find_element(By.CSS_SELECTOR, password)
+
+# Now typing my password into the password_text_box that is "aneeshti123"
+password_text_box.send_keys("aneeshti123")
+
+# Creating the id for ice_cream check box.
+ice_cream = "exampleCheck1"
+
+# Now creating teh element for the iceCream check box.
+ice_cream_check_box = driver.find_element(By.ID, ice_cream)
+
+# Now clicking the ice_cream check box.
+ice_cream_check_box.click()
+
+# Creating the css selector for student check box.
+student = "input[id='inlineRadio1']"
+
+# Now creating a web element for the student check box.
+student_check_box = driver.find_element(By.CSS_SELECTOR, student)
+
+# Now clicking on the student element.
+student_check_box.click()
+
+# Creating the css selector for submitting.
+# Now I am always using css selector because we can use it in console by command $("css_selector").
+# Creating the xpath for submitting.
+# Now this is just in case if I don't want to use css selector for some reason else css selector is the best.
+# So the format of xpath is. //tagname[@attribute='value']
+# The xpath can be accessed in the console using the command $x("xpath")
+submit = "//input[@type='submit'"
+
+# Now creating a web element for the submit button.
+submit_button = driver.find_element(By.XPATH, submit)
+
+# Now clicking on the submit button.
+submit_button.click()
