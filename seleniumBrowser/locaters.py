@@ -66,10 +66,20 @@ student_check_box.click()
 # Now this is just in case if I don't want to use css selector for some reason else css selector is the best.
 # So the format of xpath is. //tagname[@attribute='value']
 # The xpath can be accessed in the console using the command $x("xpath")
-submit = "//input[@type='submit'"
+submit = "//input[@type='submit']"
 
 # Now creating a web element for the submit button.
 submit_button = driver.find_element(By.XPATH, submit)
 
 # Now clicking on the submit button.
 submit_button.click()
+
+# Now verifying whether our text was valid.
+# To do that we have to get success text. Now creating the css selector for the following text box showing up.
+text_check = "div[class='alert alert-success alert-dismissible']"
+
+# Now creating the web element.
+text_check_box = driver.find_element(By.CSS_SELECTOR, text_check)
+
+# Now printing out the text.
+print(text_check_box.text)

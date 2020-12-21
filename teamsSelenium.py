@@ -7,14 +7,13 @@ import numpy as np
 
 driver = webdriver.Chrome()
 
+
 driver.maximize_window()
 
 # Please enter the url.
-driver.get(
-    "https://teams.microsoft.com/l/meetup-join/19%3a39952c499f4c46f9a1960dd3d9651072%40thread.tacv2/1608268471793"
-    "?context=%7b%22Tid%22%3a%225fd10a7a-9625-46f7-b7f9-551a2760c887%22%2c%22Oid%22%3a%223a180735-4016-41f4-89ec"
-    "-456bd33bb8e0%22%7d"
-)
+driver.get("https://teams.microsoft.com/l/meetup-join/19%3ameeting_NWE4ZGFjN2YtOTU4ZS00YTg1LWJmYTItMmY2MDU3MWNmZGY1"
+           "%40thread.v2/0?context=%7b%22Tid%22%3a%225fd10a7a-9625-46f7-b7f9-551a2760c887%22%2c%22Oid%22%3a"
+           "%2268ed0f87-0002-4137-b7f0-302df5709824%22%7d")
 
 pyautogui.hotkey("esc")
 
