@@ -61,8 +61,15 @@ cancel_forget_password_check_box.click()
 # Very Important
 # If there are no such tags you rely on. Then you can take the parent tags help. That means that first you can
 # reach the destination of the parent tag and then you can reach the destination of the tag you wanted to reach.
-# Note: We can use grandparents for the above situation. In that you can just replace all the parent stuff with
-# the grandparent stuff.
+# Note: We can use grandparents for the above situation. The syntax would be. In this grand parent and parent stuff
+# there lies a problem, the problem is that their may be multiple elements with the same tag. So the solution for it
+# is indexing.
+# For example in the syntax below I am also adding the extra square brackets in parent_tagname. These square brackets
+# help us in mentioning that which element we want. In this case the indexing starts from 1.
+# A important thing to note is that this parent and grand parent concept becomes complex in css so it is not \
+# recommended to use css.
+
+# //grand_parent_tagname[@grand_parent_attribute='grand_parent_value']/parent_tagname[1]/child_tagname
 
 # The syntax for the above is (xpath_of_the_parent)/tagname. Better way is
 # //parent_tagname[@parent_attribute='parent_value']/child_tagname
@@ -74,3 +81,9 @@ word_user_name = "//div[@id='usernamegroup']/label"
 
 # Also creating the css for this so that I can practice.
 word_user_name = "div[id='usernamegroup'] label"
+
+# Creating this user name using grand child.
+word_user_name = "//form[@name='login']/div[1]/label"
+
+# Now creating a web element for the same user name word.
+word_user_name_word = driver.find_element(By.XPATH, word_user_name)
