@@ -1,6 +1,8 @@
 class Employee:
-    def employeeDetails(self):
+    def __init__(self):
         self.name = "Mathew"
+
+    def employeeDetails(self):
         print("Name = ", self.name)
         age = 30
         print("Age = ", age)
