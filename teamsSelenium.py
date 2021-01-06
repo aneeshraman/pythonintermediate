@@ -1,4 +1,5 @@
-# Importing the selenium library and By class. I am also importing pyautogui because I wanted to automate everything.
+# Importing the selenium library and By class. I am also importing pyautogui because I wanted to
+# automate everything.
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -11,9 +12,10 @@ driver.maximize_window()
 
 # Please enter the url.
 driver.get(
-    "https://teams.microsoft.com/l/meetup-join/19%3ameeting_YmRlZDViMTktN2E5NC00MDgxLWJkZTQtMDdjZmMzZjM5ODk1"
-    "%40thread.v2/0?context=%7b%22Tid%22%3a%225fd10a7a-9625-46f7-b7f9-551a2760c887%22%2c%22Oid%22%3a"
-    "%2254cee5a3-f653-4dfa-ae8e-c793092d69ae%22%7d")
+    "https://teams.microsoft.com/l/meetup-join/19"
+    "%3ameeting_M2I2NjFhOTEtZjcwNi00YzMwLThlYTItMDA2MmFiNjFjNTgw%40thread.v2/0?context=%7b%22Tid"
+    "%22%3a%225fd10a7a-9625-46f7-b7f9-551a2760c887%22%2c%22Oid%22%3a%226b4e5221-7622-4169-a157"
+    "-7f2fb0819691%22%7d")
 
 pyautogui.hotkey("esc")
 
