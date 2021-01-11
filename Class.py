@@ -7,7 +7,7 @@ class Attendee:
         self.name = name
         self.tickets = tickets
 
-    def displayAttendee(self):
+    def display_attendee(self):
         print('Name: {}, Tickets: {}'.format(self.name, self.tickets))
 
     def addTicket(self):
