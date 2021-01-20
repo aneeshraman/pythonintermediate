@@ -1,2 +1,6 @@
-from whatsAutomation import message
-message.one_message_whatsapp_desktop("+919313876651", (1365, 767), "Hello")
+from WhatsAutomation import message
+import time
+
+Bot = message.WebWhatsappBot("Chrome")
+time.sleep(5)
+Bot.automate(["+7011040802"], ["Automated Message", "Hello"])

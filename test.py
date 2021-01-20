@@ -1,1 +1,1 @@
-from whatsAutomation import message
+from WhatsAutomation import message
