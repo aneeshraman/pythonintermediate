@@ -1,10 +1,8 @@
 # Importing the tkinter library
 from tkinter import *
-import keyboard
 
 # Creating a window.
 root = Tk()
-
 # Changing the title.
 root.title("Simple Calculator")
 
@@ -147,26 +145,31 @@ button_plus = Button(root, text="+", padx=40, pady=20, command=func_button_plus)
 def func_button_equals():
     if "+" in calculator_input.get():
         try:
-            return int(calculator_input[:calculator_input.get().index("+")]) + int(
-                calculator_input[calculator_input.get().index("+") + 1:])
+            plus_index = calculator_input.get().index("+")
+            first_number = int(calculator_input.get()[:plus_index])
+            second_number = int(calculator_input.get()[plus_index + 1:])
+            func_button_clear()
+            calculator_input.insert(0, str(first_number + second_number))
 
         except ValueError:
             func_button_clear()
             calculator_input.insert(0, "Wrong Input")
-
 
     elif "-" in calculator_input.get():
         try:
-            return int(calculator_input[:calculator_input.get().index("-")]) + int(
-                calculator_input[calculator_input.get().index("-")+1:])
+            minus_index = calculator_input.get().index("-")
+            first_number = int(calculator_input.get()[:minus_index])
+            second_number = int(calculator_input.get()[minus_index + 1:])
+            calculator_input.insert(0, str(first_number - second_number))
+            func_button_clear()
 
         except ValueError:
             func_button_clear()
             calculator_input.insert(0, "Wrong Input")
 
 
+button_equals = Button(root, text="=", padx=86.5, pady=20, command=func_button_equals)
 # Creating button =
-button_equals = Button(root, text="=", padx=86.5, pady=20)
 
 # Placing the buttons on screen.
 button_plus.grid(row=5, column=0)
@@ -180,6 +183,7 @@ button_star = Button(root, text="*", padx=40, pady=20)
 
 # Creating button /.
 button_divide = Button(root, text="/", padx=40, pady=20)
+
 
 # Creating the mainloop.
 root.mainloop()

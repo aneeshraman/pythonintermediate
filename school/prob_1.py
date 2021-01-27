@@ -16,7 +16,7 @@ except ValueError:
     print("Wrong Input for the second number")
     b_is_wrong = True
 
-if a_is_wrong == False and b_is_wrong == False:
+if a_is_wrong is False and b_is_wrong is False:
     print(f"Sum of the numbers is: {a + b}")
     print(f"Difference of the numbers is: {a - b}")
     print(f"Product of the numbers is: {a * b}")

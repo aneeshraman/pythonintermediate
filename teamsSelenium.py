@@ -11,9 +11,11 @@ driver = webdriver.Chrome()
 driver.maximize_window()
 
 # Please enter the url.
-driver.get("https://teams.microsoft.com/l/meetup-join/19%3ab0319b3a113e4337bf741a36dccec885%40thread.tacv2"
-           "/1611086041980?context=%7b%22Tid%22%3a%225fd10a7a-9625-46f7-b7f9-551a2760c887%22%2c%22Oid%22%3a"
-           "%22ebde4543-5cd9-4f91-9054-0ef96de57685%22%7d")
+driver.get(
+    "https://teams.microsoft.com/l/meetup-join/19%3ab0319b3a113e4337bf741a36dccec885%40thread.tacv2/1611666225510"
+    "?context=%7b%22Tid%22%3a%225fd10a7a-9625-46f7-b7f9-551a2760c887%22%2c%22Oid%22%3a%22ebde4543-5cd9-4f91-9054"
+    "-0ef96de57685%22%7d "
+)
 
 pyautogui.hotkey("esc")
 

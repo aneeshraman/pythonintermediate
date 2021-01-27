@@ -1,6 +1,3 @@
-from WhatsAutomation import message
-import time
+from send_message import *
 
-Bot = message.WebWhatsappBot("Chrome")
-time.sleep(5)
-Bot.automate(["+7011040802"], ["Automated Message", "Hello"])
+Bot = Telegram(["Aparna Raman"], "Mami")
